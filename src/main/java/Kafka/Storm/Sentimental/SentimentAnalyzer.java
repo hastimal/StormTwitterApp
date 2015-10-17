@@ -1,4 +1,4 @@
-/**
+package Kafka.Storm.Sentimental; /**
  * Created by hastimal on 9/29/2015.
  * Reference : https://github.com/shekhargulati/day20-stanford-sentiment-analysis-demo
  */

@@ -1,3 +1,7 @@
+package Kafka.Storm.Sentimental;
+
+import Kafka.Storm.Sentimental.SentimentAnalyzer;
+import Kafka.Storm.Sentimental.TweetWithSentiment;
 import backtype.storm.topology.base.BaseBasicBolt;
 import backtype.storm.topology.BasicOutputCollector;
 import backtype.storm.topology.OutputFieldsDeclarer;

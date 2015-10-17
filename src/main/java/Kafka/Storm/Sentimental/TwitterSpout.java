@@ -1,3 +1,5 @@
+package Kafka.Storm.Sentimental;
+
 import backtype.storm.topology.base.BaseRichSpout;
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;

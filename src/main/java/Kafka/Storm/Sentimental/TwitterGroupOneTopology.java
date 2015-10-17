@@ -1,3 +1,6 @@
+package Kafka.Storm.Sentimental;
+
+import Kafka.Storm.Sentimental.TwitterBolt;
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.StormSubmitter;
@@ -20,7 +23,7 @@ public class TwitterGroupOneTopology {
             }
         } else {
             LocalCluster cluster = new LocalCluster();
-            cluster.submitTopology("TwitterGroupOneTopology",createConfig(true),createTopology());
+            cluster.submitTopology("Kafka.Storm.Sentimental.TwitterGroupOneTopology",createConfig(true),createTopology());
             try {
                 Thread.sleep(60000);
             } catch (InterruptedException e) {
@@ -37,9 +40,9 @@ public class TwitterGroupOneTopology {
         TopologyBuilder topology = new TopologyBuilder();
 
 
-        topology.setSpout("TwitterSpout", new TwitterSpout(), 4);
+        topology.setSpout("Kafka.Storm.Sentimental.TwitterSpout", new TwitterSpout(), 4);
 
-        topology.setBolt("TwitterBolt", new TwitterBolt(), 4).shuffleGrouping("TwitterSpout");
+        topology.setBolt("Kafka.Storm.Sentimental.TwitterBolt", new TwitterBolt(), 4).shuffleGrouping("Kafka.Storm.Sentimental.TwitterSpout");
 
 
         return topology.createTopology();
